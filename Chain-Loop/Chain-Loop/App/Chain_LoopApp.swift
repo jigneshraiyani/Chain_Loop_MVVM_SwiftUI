@@ -9,9 +9,15 @@ import SwiftUI
 
 @main
 struct Chain_LoopApp: App {
+    @AppStorage("isOnBoarded") var isOnBoarded = false
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if !isOnBoarded {
+                OnBoardingView()
+            } else {
+                ContentView()
+            }
         }
     }
 }
