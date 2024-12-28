@@ -14,6 +14,12 @@
 		33069C1A2D1FA2B600B2C033 /* Chain_LoopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33069C192D1FA2B600B2C033 /* Chain_LoopTests.swift */; };
 		33069C242D1FA2B600B2C033 /* Chain_LoopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33069C232D1FA2B600B2C033 /* Chain_LoopUITests.swift */; };
 		33069C262D1FA2B600B2C033 /* Chain_LoopUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33069C252D1FA2B600B2C033 /* Chain_LoopUITestsLaunchTests.swift */; };
+		33069C3A2D200B6300B2C033 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33069C392D200B6300B2C033 /* OnBoardingView.swift */; };
+		33069C3C2D200CE500B2C033 /* OnBoardingCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33069C3B2D200CE500B2C033 /* OnBoardingCardView.swift */; };
+		33069C3E2D200E2200B2C033 /* OnBoardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33069C3D2D200E2200B2C033 /* OnBoardModel.swift */; };
+		33069C422D200F7700B2C033 /* OnBoardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33069C412D200F7700B2C033 /* OnBoardingViewModel.swift */; };
+		33069C442D2026A600B2C033 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33069C432D2026A600B2C033 /* Color.swift */; };
+		33069C462D2029D500B2C033 /* Preview_Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33069C452D2029D500B2C033 /* Preview_Provider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +50,12 @@
 		33069C1F2D1FA2B600B2C033 /* Chain-LoopUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Chain-LoopUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		33069C232D1FA2B600B2C033 /* Chain_LoopUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chain_LoopUITests.swift; sourceTree = "<group>"; };
 		33069C252D1FA2B600B2C033 /* Chain_LoopUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chain_LoopUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		33069C392D200B6300B2C033 /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
+		33069C3B2D200CE500B2C033 /* OnBoardingCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingCardView.swift; sourceTree = "<group>"; };
+		33069C3D2D200E2200B2C033 /* OnBoardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardModel.swift; sourceTree = "<group>"; };
+		33069C412D200F7700B2C033 /* OnBoardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewModel.swift; sourceTree = "<group>"; };
+		33069C432D2026A600B2C033 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		33069C452D2029D500B2C033 /* Preview_Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preview_Provider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,7 +106,12 @@
 		33069C072D1FA2B000B2C033 /* Chain-Loop */ = {
 			isa = PBXGroup;
 			children = (
-				33069C082D1FA2B000B2C033 /* Chain_LoopApp.swift */,
+				33069C322D2009CB00B2C033 /* App */,
+				33069C332D2009E000B2C033 /* Core */,
+				33069C342D2009E800B2C033 /* Extension */,
+				33069C352D2009FE00B2C033 /* Model */,
+				33069C362D200A0400B2C033 /* Service */,
+				33069C372D200A0C00B2C033 /* Utility */,
 				33069C0A2D1FA2B000B2C033 /* ContentView.swift */,
 				33069C0C2D1FA2B400B2C033 /* Assets.xcassets */,
 				33069C0E2D1FA2B400B2C033 /* Preview Content */,
@@ -125,6 +142,79 @@
 				33069C252D1FA2B600B2C033 /* Chain_LoopUITestsLaunchTests.swift */,
 			);
 			path = "Chain-LoopUITests";
+			sourceTree = "<group>";
+		};
+		33069C322D2009CB00B2C033 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				33069C082D1FA2B000B2C033 /* Chain_LoopApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		33069C332D2009E000B2C033 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				33069C382D200A4100B2C033 /* Onboarding */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		33069C342D2009E800B2C033 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				33069C432D2026A600B2C033 /* Color.swift */,
+				33069C452D2029D500B2C033 /* Preview_Provider.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		33069C352D2009FE00B2C033 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				33069C3D2D200E2200B2C033 /* OnBoardModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		33069C362D200A0400B2C033 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		33069C372D200A0C00B2C033 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		33069C382D200A4100B2C033 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				33069C402D200F4E00B2C033 /* ViewModel */,
+				33069C3F2D200F4800B2C033 /* View */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		33069C3F2D200F4800B2C033 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				33069C392D200B6300B2C033 /* OnBoardingView.swift */,
+				33069C3B2D200CE500B2C033 /* OnBoardingCardView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		33069C402D200F4E00B2C033 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				33069C412D200F7700B2C033 /* OnBoardingViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +347,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33069C3A2D200B6300B2C033 /* OnBoardingView.swift in Sources */,
 				33069C0B2D1FA2B000B2C033 /* ContentView.swift in Sources */,
+				33069C442D2026A600B2C033 /* Color.swift in Sources */,
 				33069C092D1FA2B000B2C033 /* Chain_LoopApp.swift in Sources */,
+				33069C422D200F7700B2C033 /* OnBoardingViewModel.swift in Sources */,
+				33069C462D2029D500B2C033 /* Preview_Provider.swift in Sources */,
+				33069C3C2D200CE500B2C033 /* OnBoardingCardView.swift in Sources */,
+				33069C3E2D200E2200B2C033 /* OnBoardModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
