@@ -11,23 +11,6 @@ import SwiftUI
 extension Color {
    static let theme = Theme()
 }
-struct Constant {
-    struct Color {
-        static let accentColor = "AccentColor"
-        static let backgroundColor = "BackgroundColor"
-        static let primaryColor = "PrimaryColor"
-        static let secondaryBackgroundColor = "SecondaryBackgroundColor"
-        static let subtextColor = "SubtextColor"
-        static let textColor = "TextColor"
-    }
-    
-    struct onBoardColor {
-        static let twilightColor = "TwilightColor"
-        static let forestColor = "ForestColor"
-        static let purpleColor = "PurpleColor"
-        static let skyBlueColor = "SkyBlueColor"
-    }
-}
 
 struct Theme {
     let accentColor = Color(Constant.Color.accentColor)

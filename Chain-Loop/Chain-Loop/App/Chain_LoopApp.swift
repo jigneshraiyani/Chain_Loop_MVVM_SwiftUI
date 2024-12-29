@@ -16,7 +16,8 @@ struct Chain_LoopApp: App {
             if !isOnBoarded {
                 OnBoardingView()
             } else {
-                ContentView()
+               // LoginView()
+                ChainTabView()
             }
         }
     }
