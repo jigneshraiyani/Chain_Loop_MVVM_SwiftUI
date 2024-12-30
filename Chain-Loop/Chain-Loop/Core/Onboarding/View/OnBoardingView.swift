@@ -11,13 +11,16 @@ struct OnBoardingView: View {
     let viewModel = OnBoardingViewModel()
 
     var body: some View {
-        TabView {
-            ForEach(viewModel.getOnBoardData(), id: \.id) {  onboardModel in
-                OnBoardingCardView(onBoardModel: onboardModel)
+        ZStack {
+            TabView {
+                ForEach(viewModel.getOnBoardData(), id: \.id) {  onboardModel in
+                    OnBoardingCardView(onBoardModel: onboardModel)
+                }
             }
-        }
-        .tabViewStyle(PageTabViewStyle())
+            .tabViewStyle(PageTabViewStyle())
         .padding(.all)
+        }
+        .background(Color.theme.backgroundColor)
     }
 }
 
