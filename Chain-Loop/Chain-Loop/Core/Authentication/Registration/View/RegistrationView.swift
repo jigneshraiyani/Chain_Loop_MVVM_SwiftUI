@@ -8,20 +8,26 @@
 import SwiftUI
 
 struct RegistrationView: View {
-    // MARK: - Constant
+    
+    // MARK: - Properties & Objects
+    @StateObject private var viewModel = RegistrationViewModel()
+    @Environment(\.dismiss) var dismiss
+    
+    // MARK: - Int Constant
     let trailingPading = 20.0
     let vStackSpacing = 10.0
     let imageDim = 124.0
     let cornerRadius = 10.0
+    
+    // MARK: - String Constant
+    let emailPlaceHolder = "Enter your email"
+    let phonePlaceHolder = "Enter your phone number"
+    let passwordPlaceHolder = "Enter your password"
+    let userNamePlaceHolder = "Enter your username"
+    let signupButtonTitle = "Sign up"
+    let alreadyAccountText = "Alreay have an account? "
+    let signinText = "Sign in"
 
-    
-    // MARK: - Properties
-    @State var email: String = ""
-    @State var phoneNumber: String = ""
-    @State var password: String = ""
-    @State var username: String = ""
-    @Environment(\.dismiss) var dismiss
-    
     // MARK: - Body
     var body: some View {
         ZStack {
@@ -52,14 +58,18 @@ extension RegistrationView {
     // MARK: - InputField View
     var inputFieldView: some View {
         VStack {
-            TextField("Enter your email", text: $email)
+            TextField(emailPlaceHolder,
+                      text: $viewModel.email)
                 .autocapitalization(.none)
                 .modifier(TextFieldModifier())
-            TextField("Enter your phone number", text: $phoneNumber)
+            TextField(phonePlaceHolder,
+                      text: $viewModel.phoneNumber)
                 .modifier(TextFieldModifier())
-            SecureField("Enter your password", text: $password)
+            SecureField(passwordPlaceHolder,
+                        text: $viewModel.password)
                 .modifier(TextFieldModifier())
-            TextField("Enter your username", text: $username)
+            TextField(userNamePlaceHolder,
+                      text: $viewModel.username)
                 .modifier(TextFieldModifier())
 
         }
@@ -68,10 +78,13 @@ extension RegistrationView {
     // MARK: - Logon Button View
     var signUpButtonView: some View {
         Button {
-            //
+            Task {
+               try await viewModel.createUserProfile()
+            }
         } label: {
-            Text("Sign up")
+            Text(signupButtonTitle)
                 .modifier(AuthButtonTextModifier())
+                .padding()
         }
     }
     
@@ -81,8 +94,8 @@ extension RegistrationView {
             dismiss()
         } label: {
             HStack {
-                Text("Alreay have an account? ")
-                Text("Sign in")
+                Text(alreadyAccountText)
+                Text(signinText)
                     .fontWeight(.heavy)
             }
             .font(.footnote)

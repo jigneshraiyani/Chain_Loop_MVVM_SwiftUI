@@ -8,12 +8,15 @@
 import SwiftUI
 
 struct LoginView: View {
+    // MARK: - EnvironmentObject
+    @EnvironmentObject private var appCoordinator: AppCoordinator
+    
     // MARK: - Constant
     let trailingPading = 20.0
     let vStackSpacing = 10.0
     let imageDim = 124.0
     let cornerRadius = 10.0
-
+    
     
     // MARK: - Properties
     @State var email: String = ""
@@ -22,21 +25,20 @@ struct LoginView: View {
     
     // MARK: - Body
     var body: some View {
-        NavigationStack {
-            ZStack {
-                VStack(spacing: vStackSpacing) {
-                    Spacer()
-                    iconImage
-                    inputFieldView
-                    forgotView
-                    loginButtonView
-                    Spacer()
-                    Divider()
-                    footerView
-                }
+        ZStack {
+            VStack(spacing: vStackSpacing) {
+                Spacer()
+                iconImage
+                inputFieldView
+                forgotView
+                loginButtonView
+                Spacer()
+                Divider()
+                footerView
             }
-            .background(Color.theme.backgroundColor)
         }
+        .navigationBarBackButtonHidden(true)
+        .background(Color.theme.backgroundColor)
     }
 }
 
@@ -84,10 +86,11 @@ extension LoginView {
     // MARK: - Logon Button View
     var loginButtonView: some View {
         Button {
-            //
+            appCoordinator.push(page: .chainView)
         } label: {
             Text("Login")
                 .modifier(AuthButtonTextModifier())
+                .padding(.horizontal)
         }
     }
     

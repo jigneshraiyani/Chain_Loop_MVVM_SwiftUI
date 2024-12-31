@@ -23,6 +23,5 @@ struct AuthButtonTextModifier: ViewModifier {
             .background(Color.theme.primaryColor)
             .cornerRadius(cornerRadius)
             .foregroundColor(Color.theme.textColor)
-            .padding(.all, trailingPading)
     }
 }
