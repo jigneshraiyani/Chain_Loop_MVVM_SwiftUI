@@ -60,10 +60,6 @@ struct ChainTabView: View {
             }
         })
         .tint(Color.theme.primaryColor)
-        //       }
-        //       .background(Color.theme.backgroundColor)
-        
-        //   }
         .navigationBarBackButtonHidden(true)
         
     }

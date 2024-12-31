@@ -61,6 +61,7 @@ extension RegistrationView {
             TextField(emailPlaceHolder,
                       text: $viewModel.email)
                 .autocapitalization(.none)
+                .autocorrectionDisabled(true)
                 .modifier(TextFieldModifier())
             TextField(phonePlaceHolder,
                       text: $viewModel.phoneNumber)

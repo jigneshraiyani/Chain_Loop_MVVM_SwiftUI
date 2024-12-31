@@ -8,7 +8,7 @@
 import Foundation
 import Firebase
 
-class AuthService {
+class AuthService: ObservableObject {
     // MARK: - Properties & Objects
     @Published var userSession: FirebaseAuth.User?
     
@@ -20,15 +20,36 @@ class AuthService {
         userSession = Auth.auth().currentUser
     }
     
+    /// Login user using Firebase Login service
+    /// - Parameter user: User model object having email & password
+    func signInUser(user: User) async throws {
+        do {
+            let result =  try await Auth.auth().signIn(withEmail: user.emailID,
+                                                           password: user.password)
+            self.userSession = result.user
+            print("user signin = \(result.user.uid)")
+        } catch let error {
+            print("error during user creation = \(error.localizedDescription)")
+        }
+
+    }
+    
     /// Register user using Firebase Auth service
     /// - Parameter user: User model object having email & password
     func createUser(user: User) async throws {
         do {
             let result =  try await Auth.auth().createUser(withEmail: user.emailID,
                                                            password: user.password)
+            self.userSession = result.user
             print("user creation = \(result.user.uid)")
         } catch let error {
             print("error during user creation = \(error.localizedDescription)")
         }
+    }
+    
+    /// Logoff user locally and make userSession nil
+    func signout() {
+        try? Auth.auth().signOut()
+        self.userSession = nil
     }
 }

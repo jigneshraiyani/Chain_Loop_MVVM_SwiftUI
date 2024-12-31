@@ -17,11 +17,18 @@ struct LoginView: View {
     let imageDim = 124.0
     let cornerRadius = 10.0
     
+    // MARK: - String Constant
+    let emailPlaceHolder = "Enter your email"
+    let phonePlaceHolder = "Enter your phone number"
+    let passwordPlaceHolder = "Enter your password"
+    let forgotButtonTitle = "Forgord Password ?"
+    let loginButtonTitle = "Login"
+    let donotHaveAccountText = "Don't have any account? "
+    let signUp = "Sign up"
     
-    // MARK: - Properties
-    @State var email: String = ""
-    @State var phoneNumber: String = ""
-    @State var password: String = ""
+    
+    // MARK: - Properties & Object
+    @StateObject private var viewModel = LoginViewModel()
     
     // MARK: - Body
     var body: some View {
@@ -56,14 +63,14 @@ extension LoginView {
     // MARK: - InputField View
     var inputFieldView: some View {
         VStack {
-            TextField("Enter your email", text: $email)
+            TextField(emailPlaceHolder, text: $viewModel.email)
                 .autocapitalization(.none)
+                .autocorrectionDisabled(true)
                 .modifier(TextFieldModifier())
-            TextField("Enter your phone number", text: $phoneNumber)
+            TextField(phonePlaceHolder, text: $viewModel.phoneNumber)
                 .modifier(TextFieldModifier())
-            SecureField("Enter your password", text: $password)
+            SecureField(passwordPlaceHolder, text: $viewModel.password)
                 .modifier(TextFieldModifier())
-
         }
     }
     
@@ -72,7 +79,7 @@ extension LoginView {
         NavigationLink {
             Text("Forgot password view")
         } label: {
-            Text("Forgord Password ?")
+            Text(forgotButtonTitle)
                 .font(.footnote)
                 .fontWeight(.heavy)
                 .foregroundColor(Color.theme.textColor)
@@ -86,9 +93,11 @@ extension LoginView {
     // MARK: - Logon Button View
     var loginButtonView: some View {
         Button {
-            appCoordinator.push(page: .chainView)
+            Task {
+               try await viewModel.signInUser()
+            }
         } label: {
-            Text("Login")
+            Text(loginButtonTitle)
                 .modifier(AuthButtonTextModifier())
                 .padding(.horizontal)
         }
@@ -101,8 +110,8 @@ extension LoginView {
                 .navigationBarBackButtonHidden(true)
         } label: {
             HStack {
-                Text("Don't have any account? ")
-                Text("Sign up")
+                Text(donotHaveAccountText)
+                Text(signUp)
                     .fontWeight(.heavy)
             }
             .font(.footnote)
