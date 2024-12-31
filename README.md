@@ -1,5 +1,4 @@
-# Chain_Loop_MVVM_SwiftUI
-Chain_Loop_MVVM_SwiftUI
+
 # 🧵 Chain Loop App  
 
 A modern social media platform for real-time conversations, connecting people, and sharing ideas. Inspired by simplicity and creativity, Chain Loop App is designed to enhance meaningful connections in a distraction-free environment.
