@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FeedView: View {
     var body: some View {
-        NavigationStack {
+  //      NavigationStack {
             ScrollView(showsIndicators: false) {
                 LazyVStack {
                     ForEach(0...10, id: \.self) { value in
@@ -22,7 +22,7 @@ struct FeedView: View {
             }
             .navigationTitle("Chain Loop")
             .navigationBarTitleDisplayMode(.inline)
-        }
+      //  }
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {

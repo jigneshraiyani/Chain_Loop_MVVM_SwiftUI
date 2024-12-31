@@ -10,7 +10,7 @@ import SwiftUI
 struct OnBoardingCardView: View {
     
     // MARK: - PROPERTIES
-    @AppStorage("isOnBoarded") var isOnBoarded: Bool?
+    @EnvironmentObject private var appCoordinator: AppCoordinator
     let onBoardModel: OnBoardModel
     
     // MARK: - Constant
@@ -70,7 +70,7 @@ extension OnBoardingCardView {
     // MARK: - Continue Button
     var continueButton: some View {
         Button {
-            isOnBoarded = true
+            appCoordinator.push(page: .loginView)
         } label: {
             HStack(spacing: spacing) {
                 Text(continueButtonTitle)

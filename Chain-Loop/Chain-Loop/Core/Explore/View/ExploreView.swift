@@ -10,7 +10,7 @@ import SwiftUI
 struct ExploreView: View {
     @State private var searchText = ""
     var body: some View {
-        NavigationStack {
+//        NavigationStack {
             ScrollView {
                 LazyVStack {
                     ForEach(Range(0...1), id: \.self) { value in
@@ -23,7 +23,7 @@ struct ExploreView: View {
                 }
             }
             .searchable(text: $searchText, prompt: "Search Chain")
-        }
+       // }
     }
 }
 
