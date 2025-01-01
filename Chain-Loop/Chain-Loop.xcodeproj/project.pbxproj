@@ -20,6 +20,10 @@
 		33069C422D200F7700B2C033 /* OnBoardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33069C412D200F7700B2C033 /* OnBoardingViewModel.swift */; };
 		33069C442D2026A600B2C033 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33069C432D2026A600B2C033 /* Color.swift */; };
 		33069C462D2029D500B2C033 /* Preview_Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33069C452D2029D500B2C033 /* Preview_Provider.swift */; };
+		338B77602D257BF0008BE1B6 /* ProfileUserContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338B775F2D257BF0008BE1B6 /* ProfileUserContentView.swift */; };
+		338CC5A02D2572C2006B2FCA /* CurrentUserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338CC59F2D2572C2006B2FCA /* CurrentUserProfile.swift */; };
+		338CC5A42D257371006B2FCA /* CurrentUserProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338CC5A32D257371006B2FCA /* CurrentUserProfileViewModel.swift */; };
+		338CC5A72D257621006B2FCA /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338CC5A62D257621006B2FCA /* ProfileHeaderView.swift */; };
 		338E741A2D2408CC00A54FAB /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338E74192D2408CC00A54FAB /* LoginViewModel.swift */; };
 		338FE4B52D255E5B006F941F /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338FE4B42D255E5B006F941F /* UserService.swift */; };
 		338FE4B82D255FED006F941F /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338FE4B72D255FED006F941F /* ProfileViewModel.swift */; };
@@ -90,6 +94,10 @@
 		33069C412D200F7700B2C033 /* OnBoardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewModel.swift; sourceTree = "<group>"; };
 		33069C432D2026A600B2C033 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		33069C452D2029D500B2C033 /* Preview_Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preview_Provider.swift; sourceTree = "<group>"; };
+		338B775F2D257BF0008BE1B6 /* ProfileUserContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUserContentView.swift; sourceTree = "<group>"; };
+		338CC59F2D2572C2006B2FCA /* CurrentUserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserProfile.swift; sourceTree = "<group>"; };
+		338CC5A32D257371006B2FCA /* CurrentUserProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserProfileViewModel.swift; sourceTree = "<group>"; };
+		338CC5A62D257621006B2FCA /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		338E74192D2408CC00A54FAB /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		338FE4B42D255E5B006F941F /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		338FE4B72D255FED006F941F /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
@@ -301,6 +309,40 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		338CC59E2D2572A8006B2FCA /* CurrentUserProfile */ = {
+			isa = PBXGroup;
+			children = (
+				338CC5A22D25735D006B2FCA /* ViewModel */,
+				338CC5A12D257357006B2FCA /* View */,
+			);
+			path = CurrentUserProfile;
+			sourceTree = "<group>";
+		};
+		338CC5A12D257357006B2FCA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				338CC59F2D2572C2006B2FCA /* CurrentUserProfile.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		338CC5A22D25735D006B2FCA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				338CC5A32D257371006B2FCA /* CurrentUserProfileViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		338CC5A52D257607006B2FCA /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				338CC5A62D257621006B2FCA /* ProfileHeaderView.swift */,
+				338B775F2D257BF0008BE1B6 /* ProfileUserContentView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		338E74182D2408B700A54FAB /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -440,6 +482,8 @@
 		33F458732D21690200F489CB /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				338CC5A52D257607006B2FCA /* Components */,
+				338CC59E2D2572A8006B2FCA /* CurrentUserProfile */,
 				338FE4B62D255FDB006F941F /* ViewModel */,
 				33F4588A2D22B8D800F489CB /* EditProfile */,
 				33F458742D21690900F489CB /* View */,
@@ -690,6 +734,7 @@
 				33F8D4BD2D23048E00437A14 /* AppPages.swift in Sources */,
 				3391EFEF2D2108940002060E /* ImageConstant.swift in Sources */,
 				338E741A2D2408CC00A54FAB /* LoginViewModel.swift in Sources */,
+				338CC5A42D257371006B2FCA /* CurrentUserProfileViewModel.swift in Sources */,
 				33069C3A2D200B6300B2C033 /* OnBoardingView.swift in Sources */,
 				33F4587A2D21693500F489CB /* CreateChainView.swift in Sources */,
 				33069C0B2D1FA2B000B2C033 /* ContentView.swift in Sources */,
@@ -700,10 +745,12 @@
 				33F458642D2146F500F489CB /* RegistrationView.swift in Sources */,
 				33F4586E2D21642000F489CB /* ChainTabView.swift in Sources */,
 				33F458832D21C10B00F489CB /* CircularProfileImageView.swift in Sources */,
+				338CC5A02D2572C2006B2FCA /* CurrentUserProfile.swift in Sources */,
 				33F458872D22A20A00F489CB /* PrimaryButtonTextModifier.swift in Sources */,
 				33F8D4C52D23C57A00437A14 /* AuthService.swift in Sources */,
 				33069C442D2026A600B2C033 /* Color.swift in Sources */,
 				33F4587E2D21696E00F489CB /* FeedView.swift in Sources */,
+				338CC5A72D257621006B2FCA /* ProfileHeaderView.swift in Sources */,
 				3391EFEA2D21068B0002060E /* LoginView.swift in Sources */,
 				33F458782D21692400F489CB /* ProfileView.swift in Sources */,
 				33F458892D22AB5C00F489CB /* ProfileChainFilter.swift in Sources */,
@@ -721,6 +768,7 @@
 				33069C3E2D200E2200B2C033 /* OnBoardModel.swift in Sources */,
 				33F458852D21C14D00F489CB /* UserCell.swift in Sources */,
 				33F8D4CB2D23CEA900437A14 /* RootViewModel.swift in Sources */,
+				338B77602D257BF0008BE1B6 /* ProfileUserContentView.swift in Sources */,
 				3391EFED2D21085D0002060E /* ColorConstant.swift in Sources */,
 				338FE4B82D255FED006F941F /* ProfileViewModel.swift in Sources */,
 			);
