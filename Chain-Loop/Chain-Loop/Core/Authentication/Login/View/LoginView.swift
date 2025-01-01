@@ -95,6 +95,8 @@ extension LoginView {
         Button {
             Task {
                try await viewModel.signInUser()
+              //  appCoordinator.popToRoot()
+                appCoordinator.push(page: .chainView)
             }
         } label: {
             Text(loginButtonTitle)

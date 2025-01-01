@@ -22,7 +22,12 @@ class RegistrationViewModel: ObservableObject {
     /// Method to call user profile
     /// - Throws: Throw error if userProfile creation fails
     func createUserProfile() async throws {
-        let user = User(emailID: email, password: password)
+        let user = User(userName: username,
+                        emailID: email,
+                        password: password,
+                        phoneNumber: phoneNumber,
+                        bio: "bio detailss",
+                        profileImageURL: "www.google.com/profile")
         try await AuthService.shared.createUser(user: user)
     }
 }

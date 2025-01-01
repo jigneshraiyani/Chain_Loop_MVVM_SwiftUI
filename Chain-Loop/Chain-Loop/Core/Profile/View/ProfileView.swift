@@ -8,8 +8,13 @@
 import SwiftUI
 
 struct ProfileView: View {
+    @StateObject var viewModel = ProfileViewModel()
     @State var selectedChain: ProfileChainFilter = .chains
     @Namespace var animation
+    
+    private var currentUser: User? {
+        viewModel.currentUser
+    }
     
     private var filterBarWidth: CGFloat {
         let count = CGFloat(ProfileChainFilter.allCases.count)
@@ -22,18 +27,23 @@ struct ProfileView: View {
                 HStack(alignment: .top) {
                     VStack(alignment: .leading, spacing: 12) {
                         VStack(alignment: .leading, spacing: 4) {
-                            Text("User full name")
+                            Text(currentUser?.emailID ?? "")
                                 .font(.title2)
                                 .fontWeight(.semibold)
                                 .foregroundColor(Color.theme.textColor)
-                            Text("Username")
+                            Text(currentUser?.userName ?? "")
+                                .font(.subheadline)
+                                .foregroundColor(Color.theme.textColor)
+                            Text(currentUser?.phoneNumber ?? "")
                                 .font(.subheadline)
                                 .foregroundColor(Color.theme.textColor)
                         }
-                        Text("Formula race name")
-                            .font(.footnote)
-                            .foregroundColor(Color.theme.textColor)
-                        Text("No of follower")
+                        if let bio = currentUser?.bio {
+                            Text(bio)
+                                .font(.footnote)
+                                .foregroundColor(Color.theme.textColor)
+                        }
+                        Text("2 followers")
                             .font(.caption)
                             .foregroundColor(Color.theme.subtextColor)
                     }

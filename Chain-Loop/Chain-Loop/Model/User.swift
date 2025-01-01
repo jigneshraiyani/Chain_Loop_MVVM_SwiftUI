@@ -7,10 +7,12 @@
 
 import Foundation
 
-struct User: Identifiable {
-    var id = UUID()
+struct User: Identifiable, Codable {
+    var id: String?
+    var userName: String?
     var emailID: String
     var password: String
     var phoneNumber: String?
-    var userName: String?
+    var bio: String?
+    var profileImageURL: String?
 }
