@@ -16,7 +16,7 @@ class CurrentUserProfileViewModel: ObservableObject {
         setupSubscriber()
     }
     
-    func setupSubscriber() {
+    private func setupSubscriber() {
         UserService.shared.$currentUser.sink { [weak self] user in
             self?.currentUser = user
             print("current user in profile view model is = \(user)")

@@ -11,7 +11,7 @@ struct FeedCell: View {
     var body: some View {
         VStack {
             HStack(alignment: .top, spacing: 10) {
-                CircularProfileImageView()
+                CircularProfileImageView(user: nil, size: .small)
                 VStack(alignment: .leading, spacing: 4) {
                     HStack() {
                         Text("user name")

@@ -39,7 +39,8 @@ struct ProfileHeaderView: View {
                     .foregroundColor(Color.theme.subtextColor)
             }
             Spacer()
-            CircularProfileImageView()
+            CircularProfileImageView(user: user,
+                                     size: .medium)
         }
     }
 }

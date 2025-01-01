@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CurrentUserProfile: View {
     @StateObject var viewModel = CurrentUserProfileViewModel()
+    @State var showEditProfile: Bool = false
     
     private var currentUser: User? {
         viewModel.currentUser
@@ -19,14 +20,19 @@ struct CurrentUserProfile: View {
             VStack(spacing: 20) {
                 ProfileHeaderView(user: currentUser)
                 Button {
-                    
+                    showEditProfile = true
                 } label: {
-                    Text("Follow")
+                    Text("Edit Profile")
                         .modifier(AuthButtonTextModifier())
                 }
                 ProfileUserContentView()
             }
         }
+        .sheet(isPresented: $showEditProfile, content: {
+            if let user = currentUser {
+                EditProfileView(user: user)
+            }
+        })
         .padding(.horizontal)
     }
 }

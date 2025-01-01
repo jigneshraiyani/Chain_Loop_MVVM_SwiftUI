@@ -20,6 +20,8 @@
 		33069C422D200F7700B2C033 /* OnBoardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33069C412D200F7700B2C033 /* OnBoardingViewModel.swift */; };
 		33069C442D2026A600B2C033 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33069C432D2026A600B2C033 /* Color.swift */; };
 		33069C462D2029D500B2C033 /* Preview_Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33069C452D2029D500B2C033 /* Preview_Provider.swift */; };
+		33175D4B2D25B51A00329CDB /* EditProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33175D4A2D25B51A00329CDB /* EditProfileViewModel.swift */; };
+		33175D4D2D25B64F00329CDB /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33175D4C2D25B64F00329CDB /* ImageUploader.swift */; };
 		338B77602D257BF0008BE1B6 /* ProfileUserContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338B775F2D257BF0008BE1B6 /* ProfileUserContentView.swift */; };
 		338CC5A02D2572C2006B2FCA /* CurrentUserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338CC59F2D2572C2006B2FCA /* CurrentUserProfile.swift */; };
 		338CC5A42D257371006B2FCA /* CurrentUserProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338CC5A32D257371006B2FCA /* CurrentUserProfileViewModel.swift */; };
@@ -94,6 +96,8 @@
 		33069C412D200F7700B2C033 /* OnBoardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewModel.swift; sourceTree = "<group>"; };
 		33069C432D2026A600B2C033 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		33069C452D2029D500B2C033 /* Preview_Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preview_Provider.swift; sourceTree = "<group>"; };
+		33175D4A2D25B51A00329CDB /* EditProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewModel.swift; sourceTree = "<group>"; };
+		33175D4C2D25B64F00329CDB /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
 		338B775F2D257BF0008BE1B6 /* ProfileUserContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUserContentView.swift; sourceTree = "<group>"; };
 		338CC59F2D2572C2006B2FCA /* CurrentUserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserProfile.swift; sourceTree = "<group>"; };
 		338CC5A32D257371006B2FCA /* CurrentUserProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserProfileViewModel.swift; sourceTree = "<group>"; };
@@ -271,6 +275,7 @@
 			isa = PBXGroup;
 			children = (
 				338FE4B42D255E5B006F941F /* UserService.swift */,
+				33175D4C2D25B64F00329CDB /* ImageUploader.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -305,6 +310,14 @@
 			isa = PBXGroup;
 			children = (
 				33069C412D200F7700B2C033 /* OnBoardingViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		33175D492D25B50200329CDB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				33175D4A2D25B51A00329CDB /* EditProfileViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -527,6 +540,7 @@
 		33F4588A2D22B8D800F489CB /* EditProfile */ = {
 			isa = PBXGroup;
 			children = (
+				33175D492D25B50200329CDB /* ViewModel */,
 				33F4588B2D22B8E100F489CB /* View */,
 			);
 			path = EditProfile;
@@ -760,11 +774,13 @@
 				33F458802D216CB100F489CB /* FeedCell.swift in Sources */,
 				338FE4BB2D25695B006F941F /* ExploreViewModel.swift in Sources */,
 				33069C092D1FA2B000B2C033 /* Chain_LoopApp.swift in Sources */,
+				33175D4B2D25B51A00329CDB /* EditProfileViewModel.swift in Sources */,
 				33F458682D21483200F489CB /* TextFieldModifier.swift in Sources */,
 				33F8D4C92D23CE7B00437A14 /* RootView.swift in Sources */,
 				33069C422D200F7700B2C033 /* OnBoardingViewModel.swift in Sources */,
 				33069C462D2029D500B2C033 /* Preview_Provider.swift in Sources */,
 				33069C3C2D200CE500B2C033 /* OnBoardingCardView.swift in Sources */,
+				33175D4D2D25B64F00329CDB /* ImageUploader.swift in Sources */,
 				33069C3E2D200E2200B2C033 /* OnBoardModel.swift in Sources */,
 				33F458852D21C14D00F489CB /* UserCell.swift in Sources */,
 				33F8D4CB2D23CEA900437A14 /* RootViewModel.swift in Sources */,
