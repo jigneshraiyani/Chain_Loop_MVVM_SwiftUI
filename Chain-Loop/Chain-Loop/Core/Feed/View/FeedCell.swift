@@ -8,18 +8,20 @@
 import SwiftUI
 
 struct FeedCell: View {
+    let chain: Chain
+    
     var body: some View {
         VStack {
             HStack(alignment: .top, spacing: 10) {
-                CircularProfileImageView(user: nil, size: .small)
+                CircularProfileImageView(user: chain.user, size: .small)
                 VStack(alignment: .leading, spacing: 4) {
                     HStack() {
-                        Text("user name")
+                        Text(chain.user?.userName ?? "")
                             .font(.footnote)
                             .fontWeight(.semibold)
                             .foregroundColor(Color.theme.textColor)
                         Spacer()
-                        Text("10m")
+                        Text(chain.timestamp.timestampString())
                             .font(.caption)
                             .foregroundColor(Color.theme.subtextColor)
                         Button {
@@ -29,7 +31,7 @@ struct FeedCell: View {
                                 .foregroundColor(Color.theme.textColor)
                         }
                     }
-                    Text("configuration dictionary (looking for configuration named Subline text")
+                    Text(chain.caption)
                         .font(.footnote)
                         .foregroundColor(Color.theme.subtextColor)
                         .multilineTextAlignment(.leading)
@@ -69,6 +71,6 @@ struct FeedCell: View {
 
 struct FeedCel_Previews: PreviewProvider {
     static var previews: some View {
-        FeedCell()
+        FeedCell(chain: previewData.chain)
     }
 }

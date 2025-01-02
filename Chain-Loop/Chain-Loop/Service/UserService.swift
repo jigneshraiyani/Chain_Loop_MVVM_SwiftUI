@@ -37,6 +37,13 @@ class UserService {
     }
     
     @MainActor
+    func fetchUsers(with uid: String) async throws -> User {
+        let data = try await Firestore.firestore().collection("users").document(uid).getDocument()
+        let user = try data.data(as: User.self)
+        return user
+    }
+    
+    @MainActor
     func reset() {
         self.currentUser = nil
     }

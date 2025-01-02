@@ -25,7 +25,9 @@ struct CurrentUserProfile: View {
                     Text("Edit Profile")
                         .modifier(AuthButtonTextModifier())
                 }
-                ProfileUserContentView()
+                if let user = currentUser {
+                    ProfileUserContentView(user: user)
+                }
             }
         }
         .sheet(isPresented: $showEditProfile, content: {

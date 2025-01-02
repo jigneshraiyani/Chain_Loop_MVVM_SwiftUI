@@ -8,27 +8,33 @@
 import SwiftUI
 
 struct CreateChainView: View {
+    @StateObject var viewModel = CreateChainViewModel()
     @Environment(\.dismiss) var dismiss
-    @State private var chainText: String = ""
+    
+    private var user: User? {
+        return UserService.shared.currentUser
+    }
     
     var body: some View {
   //      NavigationStack {
             VStack {
                 HStack(alignment: .top) {
-                    CircularProfileImageView(user: nil,
+                    CircularProfileImageView(user: user,
                                              size: .small)
                     VStack(alignment: .leading, spacing: 4) {
-                        Text("user name")
+                        Text(user?.userName ?? "")
                             .font(.footnote)
                             .fontWeight(.semibold)
-                        TextField("Start a chain ....", text: $chainText, axis: .vertical)
+                        TextField("Start a chain ....",
+                                  text: $viewModel.chainCaption,
+                                  axis: .vertical)
                             .font(.footnote)
                             .foregroundColor(Color.theme.subtextColor)
                     }
                     Spacer()
-                    if !chainText.isEmpty {
+                    if !viewModel.chainCaption.isEmpty {
                         Button {
-                            chainText = ""
+                            viewModel.chainCaption = ""
                         } label: {
                             Image(systemName: "xmark")
                                 .resizable()
@@ -52,10 +58,10 @@ struct CreateChainView: View {
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Post") {
-                        //
+                        Task { try await viewModel.uploadChain() }
                     }
-                    .opacity(chainText.isEmpty ? 0.5 : 1.0)
-                    .disabled(chainText.isEmpty)
+                    .opacity(viewModel.chainCaption.isEmpty ? 0.5 : 1.0)
+                    .disabled(viewModel.chainCaption.isEmpty)
                     .font(.subheadline)
                     .fontWeight(.semibold)
                     .foregroundColor(Color.theme.textColor)

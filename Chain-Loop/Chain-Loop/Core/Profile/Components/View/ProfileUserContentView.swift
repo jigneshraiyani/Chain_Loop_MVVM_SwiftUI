@@ -8,8 +8,13 @@
 import SwiftUI
 
 struct ProfileUserContentView: View {
+    @StateObject var viewModel: ProfileUserContentViewModel
     @State var selectedChain: ProfileChainFilter = .chains
     @Namespace var animation
+    
+    init(user: User) {
+        self._viewModel = StateObject(wrappedValue: ProfileUserContentViewModel(user: user))
+    }
     
     private var filterBarWidth: CGFloat {
         let count = CGFloat(ProfileChainFilter.allCases.count)
@@ -43,8 +48,8 @@ struct ProfileUserContentView: View {
                 }
             }
             LazyVStack {
-                ForEach(Range(0...5), id: \.self) { chain in
-                    FeedCell()
+                ForEach(viewModel.chains) { chain in
+                    FeedCell(chain: chain)
                 }
             }
         }
@@ -53,6 +58,6 @@ struct ProfileUserContentView: View {
 
 struct ProfileUserContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileUserContentView()
+        ProfileUserContentView(user: previewData.user)
     }
 }

@@ -21,7 +21,7 @@ struct ProfileView: View {
                     Text("Follow")
                         .modifier(AuthButtonTextModifier())
                 }
-                ProfileUserContentView()
+                ProfileUserContentView(user: user)
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
