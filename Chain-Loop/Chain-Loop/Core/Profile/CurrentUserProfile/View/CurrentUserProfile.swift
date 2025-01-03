@@ -22,13 +22,23 @@ struct CurrentUserProfile: View {
                 Button {
                     showEditProfile = true
                 } label: {
-                    Text("Edit Profile")
+                    Text("Follow")
                         .modifier(AuthButtonTextModifier())
                 }
                 if let user = currentUser {
                     ProfileUserContentView(user: user)
                 }
             }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        AuthService.shared.signout()
+                    } label: {
+                        Image(systemName: "line.3.horizontal")
+                    }
+                }
+            }
+
         }
         .sheet(isPresented: $showEditProfile, content: {
             if let user = currentUser {

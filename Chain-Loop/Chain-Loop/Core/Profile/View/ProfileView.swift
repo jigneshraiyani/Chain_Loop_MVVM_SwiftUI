@@ -18,19 +18,10 @@ struct ProfileView: View {
                 Button {
                     
                 } label: {
-                    Text("Follow")
+                    Text("Edit Profile")
                         .modifier(AuthButtonTextModifier())
                 }
                 ProfileUserContentView(user: user)
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        AuthService.shared.signout()
-                    } label: {
-                        Image(systemName: "line.3.horizontal")
-                    }
-                }
             }
         }
         .padding(.horizontal)
