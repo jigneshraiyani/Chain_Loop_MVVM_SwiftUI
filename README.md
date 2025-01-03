@@ -15,6 +15,15 @@ A modern social media platform for real-time conversations, connecting people, a
 
 ---
 
+## 🚀 Screenshots
+- <img src="Chain-Loop/Screenshots/Intro_Screen_1.png" width="300" height="600"> - <img src="Chain-Loop/Screenshots/Intro_Screen_2.png" width="300" height="600"> - <img src="Chain-Loop/Screenshots/Intro_Screen_3.png" width="300" height="600">
+- <img src="Chain-Loop/Screenshots/Signup_Screen.png" width="300" height="600"> - <img src="Chain-Loop/Screenshots/Login_Screen.png" width="300" height="600">
+- <img src="Chain-Loop/Screenshots/Chain_Home_Screen.png" width="300" height="600"> - <img src="Chain-Loop/Screenshots/Chain_search.png" width="300" height="600"> - <img src="Chain-Loop/Screenshots/Edit_Profile_Screen.png" width="300" height="600">
+- <img src="Chain-Loop/Screenshots/New_Chain_Screen.png" width="300" height="600"> - <img src="Chain-Loop/Screenshots/Chain_Profile.png" width="300" height="600">
+
+
+---
+
 ## 🛠️ Tech Stack  
 - **Frontend**: iOS 16+.  
 - **Backend**: Firebase.  
