@@ -11,10 +11,10 @@ struct ExploreView: View {
     @StateObject var viewModel = ExploreViewModel()
     @State private var searchText = ""
     var body: some View {
-//        NavigationStack {
-            ScrollView {
-                LazyVStack {
-                    ForEach(viewModel.users) { user in
+        ScrollView {
+            LazyVStack {
+                ForEach(viewModel.users) { user in
+                    NavigationLink(value: user) {
                         VStack {
                             UserCell(user: user)
                             Divider()
@@ -23,8 +23,11 @@ struct ExploreView: View {
                     }
                 }
             }
-            .searchable(text: $searchText, prompt: "Search Chain")
-       // }
+        }
+        .navigationDestination(for: User.self, destination: { user in
+            ProfileView(user: user)
+        })
+        .searchable(text: $searchText, prompt: "Search Chain")
     }
 }
 

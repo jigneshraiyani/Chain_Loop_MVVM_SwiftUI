@@ -13,7 +13,7 @@ struct UserCell: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
             HStack {
-                CircularProfileImageView()
+                CircularProfileImageView(user: user, size: .small)
                 
                 VStack (alignment: .leading){
                     Text(user.userName ?? "")

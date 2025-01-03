@@ -8,17 +8,19 @@
 import SwiftUI
 
 struct FeedView: View {
+    @StateObject var viewModel = FeedViewModel()
+    
     var body: some View {
   //      NavigationStack {
             ScrollView(showsIndicators: false) {
                 LazyVStack {
-                    ForEach(0...10, id: \.self) { value in
-                        FeedCell()
+                    ForEach(viewModel.chains) { chain in
+                        FeedCell(chain: chain)
                     }
                 }
             }
             .refreshable {
-                print("scroll view refresh")
+                Task { try await ChainService.shared.fetchChains() }
             }
             .navigationTitle("Chain Loop")
             .navigationBarTitleDisplayMode(.inline)
@@ -26,7 +28,7 @@ struct FeedView: View {
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
-                    //
+                    Task { try await ChainService.shared.fetchChains() }
                 } label: {
                     Image(systemName: "arrow.counterclockwise")
                         .foregroundColor(Color.red)

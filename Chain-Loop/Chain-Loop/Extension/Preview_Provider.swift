@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import Firebase
 
 extension PreviewProvider {
    static var previewData: PreviewData {
@@ -30,4 +31,6 @@ class PreviewData {
                     phoneNumber: "7709577095",
                     bio: "bio details",
                     profileImageURL: "img url")
+    
+    let chain = Chain(ownerUid: "111", caption: "this is new chain", timestamp: Timestamp(), likes: 0)
 }
